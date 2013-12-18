@@ -49,6 +49,10 @@ Mac OS X に付属する Automator.app の Workflow コレクションです。
 
 * 指定したファイルのファイル名を「年月日」「指定したテキスト」「連番」という形式にリネームします。  
 `YYYY-MM-DD_[text]_NN.EXTENTION`
+* ファイルは作成日順に連番されます。
+
+Automator.app で、条件の変更が可能です。
+
 
 ### 使い方
 
