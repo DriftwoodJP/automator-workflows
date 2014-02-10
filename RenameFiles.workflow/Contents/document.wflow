@@ -108,12 +108,10 @@
 						<string>0</string>
 					</dict>
 				</dict>
-				<key>conversionLabel</key>
-				<integer>0</integer>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>306.500000:1985.000000</string>
+				<string>497.500000:2165.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Set Value of Variable.action/Contents/Resources/Japanese.lproj/main.nib</string>
 			</dict>
@@ -210,12 +208,10 @@
 						<string>0</string>
 					</dict>
 				</dict>
-				<key>conversionLabel</key>
-				<integer>0</integer>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>306.500000:1880.000000</string>
+				<string>497.500000:2060.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Get Folder Contents.action/Contents/Resources/Japanese.lproj/main.nib</string>
 			</dict>
@@ -322,12 +318,10 @@
 						<string>0</string>
 					</dict>
 				</dict>
-				<key>conversionLabel</key>
-				<integer>0</integer>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>306.500000:1780.000000</string>
+				<string>497.500000:1960.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Set Value of Variable.action/Contents/Resources/Japanese.lproj/main.nib</string>
 			</dict>
@@ -368,11 +362,9 @@
 				<dict>
 					<key>Container</key>
 					<string>List</string>
-					<key>Optional</key>
-					<true/>
 					<key>Types</key>
 					<array>
-						<string>com.apple.cocoa.string</string>
+						<string>*</string>
 					</array>
 				</dict>
 				<key>AMRequiredResources</key>
@@ -436,12 +428,10 @@
 						<string>0</string>
 					</dict>
 				</dict>
-				<key>conversionLabel</key>
-				<integer>0</integer>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>306.500000:1675.000000</string>
+				<string>497.500000:1855.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Get Value of Variable.action/Contents/Resources/Japanese.lproj/main.nib</string>
 			</dict>
@@ -609,12 +599,10 @@
 						<string>4</string>
 					</dict>
 				</dict>
-				<key>conversionLabel</key>
-				<integer>0</integer>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>306.500000:1572.000000</string>
+				<string>497.500000:1752.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run Shell Script.action/Contents/Resources/Japanese.lproj/main.nib</string>
 			</dict>
@@ -719,12 +707,10 @@
 						<string>0</string>
 					</dict>
 				</dict>
-				<key>conversionLabel</key>
-				<integer>0</integer>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>306.500000:1389.000000</string>
+				<string>497.500000:1569.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Set Value of Variable.action/Contents/Resources/Japanese.lproj/main.nib</string>
 			</dict>
@@ -900,12 +886,10 @@
 						<string>4</string>
 					</dict>
 				</dict>
-				<key>conversionLabel</key>
-				<integer>0</integer>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>306.500000:1284.000000</string>
+				<string>497.500000:1464.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Ask for Text.action/Contents/Resources/Japanese.lproj/main.nib</string>
 			</dict>
@@ -1012,12 +996,10 @@
 						<string>0</string>
 					</dict>
 				</dict>
-				<key>conversionLabel</key>
-				<integer>0</integer>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>306.500000:1102.000000</string>
+				<string>497.500000:1282.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Set Value of Variable.action/Contents/Resources/Japanese.lproj/main.nib</string>
 			</dict>
@@ -1108,8 +1090,6 @@
 				</array>
 				<key>OutputUUID</key>
 				<string>21D217BA-F9D2-4B00-B888-7C5931075C14</string>
-				<key>StartAction</key>
-				<false/>
 				<key>UUID</key>
 				<string>392A9228-C78A-4659-A6A0-BFB4A479E480</string>
 				<key>UnlocalizedApplications</key>
@@ -1145,12 +1125,10 @@
 						<string>1</string>
 					</dict>
 				</dict>
-				<key>conversionLabel</key>
-				<integer>0</integer>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>306.500000:997.000000</string>
+				<string>497.500000:1177.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/New Folder.action/Contents/Resources/Japanese.lproj/main.nib</string>
 			</dict>
@@ -1193,11 +1171,9 @@
 				<dict>
 					<key>Container</key>
 					<string>List</string>
-					<key>Optional</key>
-					<false/>
 					<key>Types</key>
 					<array>
-						<string>com.apple.cocoa.path</string>
+						<string>*</string>
 					</array>
 				</dict>
 				<key>AMRequiredResources</key>
@@ -1261,12 +1237,10 @@
 						<string>0</string>
 					</dict>
 				</dict>
-				<key>conversionLabel</key>
-				<integer>0</integer>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>306.500000:867.000000</string>
+				<string>497.500000:1047.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Get Value of Variable.action/Contents/Resources/Japanese.lproj/main.nib</string>
 			</dict>
@@ -1341,8 +1315,6 @@
 				</array>
 				<key>OutputUUID</key>
 				<string>D16B2BC0-94C4-4669-A0AB-764FFFFCAD3E</string>
-				<key>StartAction</key>
-				<false/>
 				<key>UUID</key>
 				<string>4C32FC65-980C-4ADE-B796-DC7EAFEDF524</string>
 				<key>UnlocalizedApplications</key>
@@ -1365,12 +1337,10 @@
 						<string>0</string>
 					</dict>
 				</dict>
-				<key>conversionLabel</key>
-				<integer>0</integer>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>306.500000:764.000000</string>
+				<string>497.500000:944.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Get Folder Contents.action/Contents/Resources/Japanese.lproj/main.nib</string>
 			</dict>
@@ -1452,8 +1422,6 @@
 				</array>
 				<key>OutputUUID</key>
 				<string>C278F29B-D051-4D43-A680-E92DBBA82F61</string>
-				<key>StartAction</key>
-				<false/>
 				<key>UUID</key>
 				<string>CE74D771-4FC7-4EAF-8ED4-32562F6FD13C</string>
 				<key>UnlocalizedApplications</key>
@@ -1489,12 +1457,10 @@
 						<string>1</string>
 					</dict>
 				</dict>
-				<key>conversionLabel</key>
-				<integer>0</integer>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>306.500000:664.000000</string>
+				<string>497.500000:844.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Copy Finder Items.action/Contents/Resources/Japanese.lproj/main.nib</string>
 			</dict>
@@ -1544,7 +1510,7 @@
 				<key>ActionParameters</key>
 				<dict>
 					<key>sortIndicator</key>
-					<integer>3</integer>
+					<integer>0</integer>
 					<key>sortOrder</key>
 					<integer>0</integer>
 				</dict>
@@ -1608,12 +1574,10 @@
 						<string>1</string>
 					</dict>
 				</dict>
-				<key>conversionLabel</key>
-				<integer>0</integer>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>306.500000:561.000000</string>
+				<string>497.500000:741.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Sort Finder Items.action/Contents/Resources/Japanese.lproj/main.nib</string>
 			</dict>
@@ -1801,8 +1765,6 @@
 				</array>
 				<key>OutputUUID</key>
 				<string>E133DADB-3812-4971-960A-B0DABDEEA40C</string>
-				<key>StartAction</key>
-				<false/>
 				<key>UUID</key>
 				<string>983F30DA-33B2-41FD-A8C0-962DD517D486</string>
 				<key>UnlocalizedApplications</key>
@@ -2098,12 +2060,10 @@
 						<string>9</string>
 					</dict>
 				</dict>
-				<key>conversionLabel</key>
-				<integer>0</integer>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>306.500000:458.000000</string>
+				<string>497.500000:638.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Rename Finder Items.action/Contents/Resources/Japanese.lproj/main.nib</string>
 			</dict>
@@ -2588,12 +2548,10 @@
 						<string>9</string>
 					</dict>
 				</dict>
-				<key>conversionLabel</key>
-				<integer>0</integer>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>306.500000:239.000000</string>
+				<string>497.500000:239.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Rename Finder Items.action/Contents/Resources/Japanese.lproj/main.nib</string>
 			</dict>
@@ -2603,103 +2561,103 @@
 	</array>
 	<key>connectors</key>
 	<dict>
-		<key>42E15214-2E33-49B0-9376-B226CC3CD3AC</key>
+		<key>0E231CFE-84C6-4CF8-89E2-6CD3DE9916DD</key>
+		<dict>
+			<key>from</key>
+			<string>9EB3D176-DC9E-42B6-BA03-5313C3C11349 - 9EB3D176-DC9E-42B6-BA03-5313C3C11349</string>
+			<key>to</key>
+			<string>7C0C9849-1FBE-4553-8892-84264C0D9D44 - 7C0C9849-1FBE-4553-8892-84264C0D9D44</string>
+		</dict>
+		<key>1DC11C28-C9EC-4DEC-8A89-B7D5E6BF142A</key>
+		<dict>
+			<key>from</key>
+			<string>38B99D1C-6F33-4EC4-AB5E-B6A450E6AEB3 - 38B99D1C-6F33-4EC4-AB5E-B6A450E6AEB3</string>
+			<key>to</key>
+			<string>4C32FC65-980C-4ADE-B796-DC7EAFEDF524 - 4C32FC65-980C-4ADE-B796-DC7EAFEDF524</string>
+		</dict>
+		<key>3B0440FA-EF9D-4B53-A504-726D6354EDBC</key>
+		<dict>
+			<key>from</key>
+			<string>392A9228-C78A-4659-A6A0-BFB4A479E480 - 392A9228-C78A-4659-A6A0-BFB4A479E480</string>
+			<key>to</key>
+			<string>38B99D1C-6F33-4EC4-AB5E-B6A450E6AEB3 - 38B99D1C-6F33-4EC4-AB5E-B6A450E6AEB3</string>
+		</dict>
+		<key>3F98BF4C-FE10-4638-94D2-0DAED3BFAAC0</key>
 		<dict>
 			<key>from</key>
 			<string>5848F51C-BE69-47C3-B442-FDADD1BFD25C - 5848F51C-BE69-47C3-B442-FDADD1BFD25C</string>
 			<key>to</key>
 			<string>9EB3D176-DC9E-42B6-BA03-5313C3C11349 - 9EB3D176-DC9E-42B6-BA03-5313C3C11349</string>
 		</dict>
-		<key>4850FEE5-9E8B-44B8-A138-F4ABBAE51BBF</key>
+		<key>4DD9CB77-B7A0-4BD9-9C14-595D5CCAB293</key>
+		<dict>
+			<key>from</key>
+			<string>CE74D771-4FC7-4EAF-8ED4-32562F6FD13C - CE74D771-4FC7-4EAF-8ED4-32562F6FD13C</string>
+			<key>to</key>
+			<string>5310F351-29AF-401E-BFDC-101374F7C64E - 5310F351-29AF-401E-BFDC-101374F7C64E</string>
+		</dict>
+		<key>6C99A074-1A95-41CD-B4D6-891948308F5C</key>
+		<dict>
+			<key>from</key>
+			<string>4C32FC65-980C-4ADE-B796-DC7EAFEDF524 - 4C32FC65-980C-4ADE-B796-DC7EAFEDF524</string>
+			<key>to</key>
+			<string>CE74D771-4FC7-4EAF-8ED4-32562F6FD13C - CE74D771-4FC7-4EAF-8ED4-32562F6FD13C</string>
+		</dict>
+		<key>96A3551C-2A15-4B4D-BB57-CE072BACA3DC</key>
 		<dict>
 			<key>from</key>
 			<string>F4DA9560-CEFC-40FF-8A12-C26C6E18E6C6 - F4DA9560-CEFC-40FF-8A12-C26C6E18E6C6</string>
 			<key>to</key>
 			<string>923C290D-1B9C-49FE-9645-C0A41C67847C - 923C290D-1B9C-49FE-9645-C0A41C67847C</string>
 		</dict>
-		<key>67D91F87-AF7A-4A57-B24D-D15613E38888</key>
-		<dict>
-			<key>from</key>
-			<string>9EB3D176-DC9E-42B6-BA03-5313C3C11349 - 9EB3D176-DC9E-42B6-BA03-5313C3C11349</string>
-			<key>to</key>
-			<string>7C0C9849-1FBE-4553-8892-84264C0D9D44 - 7C0C9849-1FBE-4553-8892-84264C0D9D44</string>
-		</dict>
-		<key>79F9E02F-0571-4ECD-A031-7A23949FDF8E</key>
-		<dict>
-			<key>from</key>
-			<string>5310F351-29AF-401E-BFDC-101374F7C64E - 5310F351-29AF-401E-BFDC-101374F7C64E</string>
-			<key>to</key>
-			<string>983F30DA-33B2-41FD-A8C0-962DD517D486 - 983F30DA-33B2-41FD-A8C0-962DD517D486</string>
-		</dict>
-		<key>B4BD1FA9-B673-4A9B-8026-729DF04D1240</key>
-		<dict>
-			<key>from</key>
-			<string>C6A6C3A5-BF4B-41CC-B95E-421C198BA1BF - C6A6C3A5-BF4B-41CC-B95E-421C198BA1BF</string>
-			<key>to</key>
-			<string>A1B78D80-0F15-41C4-BA4C-1E7B8D8F33AF - A1B78D80-0F15-41C4-BA4C-1E7B8D8F33AF</string>
-		</dict>
-		<key>B56E260C-4D94-4C08-BFDF-6DADA78AD97B</key>
+		<key>9CFA1DE5-DC86-4C1D-8D19-E20D0B2B6B8E</key>
 		<dict>
 			<key>from</key>
 			<string>983F30DA-33B2-41FD-A8C0-962DD517D486 - 983F30DA-33B2-41FD-A8C0-962DD517D486</string>
 			<key>to</key>
 			<string>B499BC57-FF4F-426A-94CC-9E30D26939E1 - B499BC57-FF4F-426A-94CC-9E30D26939E1</string>
 		</dict>
-		<key>B785B2C4-56A2-4F53-A659-CAA57DE987B9</key>
+		<key>A0A883E8-20DE-4F16-AA23-15D6BD2266BC</key>
 		<dict>
 			<key>from</key>
+			<string>5310F351-29AF-401E-BFDC-101374F7C64E - 5310F351-29AF-401E-BFDC-101374F7C64E</string>
+			<key>to</key>
+			<string>983F30DA-33B2-41FD-A8C0-962DD517D486 - 983F30DA-33B2-41FD-A8C0-962DD517D486</string>
+		</dict>
+		<key>A2F33384-D308-471B-8EBB-66B510AF60D9</key>
+		<dict>
+			<key>from</key>
+			<string>0E633EE3-0302-4026-8173-5B1CE88ECE8A - 0E633EE3-0302-4026-8173-5B1CE88ECE8A</string>
+			<key>to</key>
 			<string>392A9228-C78A-4659-A6A0-BFB4A479E480 - 392A9228-C78A-4659-A6A0-BFB4A479E480</string>
-			<key>to</key>
-			<string>38B99D1C-6F33-4EC4-AB5E-B6A450E6AEB3 - 38B99D1C-6F33-4EC4-AB5E-B6A450E6AEB3</string>
 		</dict>
-		<key>C4D0411C-AB23-49F5-9EB2-F0E23B484C23</key>
-		<dict>
-			<key>from</key>
-			<string>38B99D1C-6F33-4EC4-AB5E-B6A450E6AEB3 - 38B99D1C-6F33-4EC4-AB5E-B6A450E6AEB3</string>
-			<key>to</key>
-			<string>4C32FC65-980C-4ADE-B796-DC7EAFEDF524 - 4C32FC65-980C-4ADE-B796-DC7EAFEDF524</string>
-		</dict>
-		<key>C8C32CF4-29BD-4C17-BE57-EF4316BC428C</key>
+		<key>C76F5BAE-7357-4F89-8BAB-92DD747FA8F3</key>
 		<dict>
 			<key>from</key>
 			<string>7C0C9849-1FBE-4553-8892-84264C0D9D44 - 7C0C9849-1FBE-4553-8892-84264C0D9D44</string>
 			<key>to</key>
 			<string>F4DA9560-CEFC-40FF-8A12-C26C6E18E6C6 - F4DA9560-CEFC-40FF-8A12-C26C6E18E6C6</string>
 		</dict>
-		<key>CF1FBFEF-5959-4DCC-8908-BEA2693F0357</key>
-		<dict>
-			<key>from</key>
-			<string>4C32FC65-980C-4ADE-B796-DC7EAFEDF524 - 4C32FC65-980C-4ADE-B796-DC7EAFEDF524</string>
-			<key>to</key>
-			<string>CE74D771-4FC7-4EAF-8ED4-32562F6FD13C - CE74D771-4FC7-4EAF-8ED4-32562F6FD13C</string>
-		</dict>
-		<key>D636854C-6AE3-4B1C-B663-3274FDACC2EA</key>
+		<key>DAC4B85B-C467-4888-A714-545D0064619E</key>
 		<dict>
 			<key>from</key>
 			<string>923C290D-1B9C-49FE-9645-C0A41C67847C - 923C290D-1B9C-49FE-9645-C0A41C67847C</string>
 			<key>to</key>
 			<string>C6A6C3A5-BF4B-41CC-B95E-421C198BA1BF - C6A6C3A5-BF4B-41CC-B95E-421C198BA1BF</string>
 		</dict>
-		<key>DF640AD2-A935-4956-9E67-5B515FDD0E0F</key>
+		<key>E5D2028C-AE8F-4D9A-9EB6-329C22DF1D54</key>
 		<dict>
 			<key>from</key>
-			<string>CE74D771-4FC7-4EAF-8ED4-32562F6FD13C - CE74D771-4FC7-4EAF-8ED4-32562F6FD13C</string>
+			<string>C6A6C3A5-BF4B-41CC-B95E-421C198BA1BF - C6A6C3A5-BF4B-41CC-B95E-421C198BA1BF</string>
 			<key>to</key>
-			<string>5310F351-29AF-401E-BFDC-101374F7C64E - 5310F351-29AF-401E-BFDC-101374F7C64E</string>
+			<string>A1B78D80-0F15-41C4-BA4C-1E7B8D8F33AF - A1B78D80-0F15-41C4-BA4C-1E7B8D8F33AF</string>
 		</dict>
-		<key>E4DD2CE4-3EE5-47DC-89E7-F857C898BA2A</key>
+		<key>F53B1BB7-BC05-43A4-A736-7CEA8C394841</key>
 		<dict>
 			<key>from</key>
 			<string>A1B78D80-0F15-41C4-BA4C-1E7B8D8F33AF - A1B78D80-0F15-41C4-BA4C-1E7B8D8F33AF</string>
 			<key>to</key>
 			<string>0E633EE3-0302-4026-8173-5B1CE88ECE8A - 0E633EE3-0302-4026-8173-5B1CE88ECE8A</string>
-		</dict>
-		<key>E6F71C54-E3E5-48D2-84B6-516482361E53</key>
-		<dict>
-			<key>from</key>
-			<string>0E633EE3-0302-4026-8173-5B1CE88ECE8A - 0E633EE3-0302-4026-8173-5B1CE88ECE8A</string>
-			<key>to</key>
-			<string>392A9228-C78A-4659-A6A0-BFB4A479E480 - 392A9228-C78A-4659-A6A0-BFB4A479E480</string>
 		</dict>
 	</dict>
 	<key>variables</key>
