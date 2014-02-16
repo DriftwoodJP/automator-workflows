@@ -13,7 +13,9 @@ Mac OS X に付属する Automator.app の Workflow コレクションです。
 
 ## インストール
 
-[zipファイル](https://github.com/DriftwoodJP/automator-workflows/archive/master.zip)をダウンロードし、下記のディレクトリへ利用したい .workflow ファイルを移動して下さい。
+
+
+アーカイブファイルを [Releases](https://github.com/DriftwoodJP/automator-workflows/releases) からダウンロードし、下記のディレクトリへ利用したい .workflow ファイルを移動して下さい。
 
 `/Users/****/Library/Services/`
 
