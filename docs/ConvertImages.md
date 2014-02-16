@@ -18,3 +18,45 @@
 * 最大の画像幅をピクセルで指定します。  
 ![setting](./img/ci3.png)
 * デスクトップの `ConvertImages` フォルダに変換された画像がコピーされます。
+
+
+
+
+## dev version
+
+AppleScript に全面的に書き換えました。
+
+### 特徴
+
+#### アクションのカスタマイズ
+
+以下のシンプルな構成に変更しました。
+これにより画像処理用の Automator アクションの追加・変更がしやすくなりました。
+
+```
+Base Script (AppleScript)
+    :
+Automator アクション (画像処理)
+    :
+ImageOptim Script (AppleScript)
+```
+
+
+#### 初期値の設定項目を追加
+
+以下の項目の設定変更を容易にしました。
+
+* 作業用フォルダ名 - Base Script と ImageOptim Script の defaultFolder を修正。
+* 最大ピクセル数 - Base Script の defaultMaxpxl を修正。
+
+
+#### ImageOptim-CLI に対応
+
+[ImageOptim-CLI](http://jamiemason.github.io/ImageOptim-CLI/) をインストールしている場合は、そちらを利用できるよう設定を追加しました。
+
+* Base Script の myScript を、which で表示される ImageOptim-CLI へのパスに修正。
+
+```
+% which imageOptim
+/Users/****/.nodebrew/current/bin/imageOptim
+```
