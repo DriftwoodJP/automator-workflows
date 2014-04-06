@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AMApplicationBuild</key>
+	<string>381</string>
+	<key>AMApplicationVersion</key>
+	<string>2.4</string>
+	<key>AMDocumentVersion</key>
+	<string>2</string>
+	<key>actions</key>
+	<array>
+		<dict>
+			<key>action</key>
+			<dict>
+				<key>AMAccepts</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Optional</key>
+					<true/>
+					<key>Types</key>
+					<array>
+						<string>com.apple.applescript.object</string>
+					</array>
+				</dict>
+				<key>AMActionVersion</key>
+				<string>1.0.2</string>
+				<key>AMApplication</key>
+				<array>
+					<string>Automator</string>
+				</array>
+				<key>AMParameterProperties</key>
+				<dict>
+					<key>source</key>
+					<dict/>
+				</dict>
+				<key>AMProvides</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Types</key>
+					<array>
+						<string>com.apple.applescript.object</string>
+					</array>
+				</dict>
+				<key>ActionBundlePath</key>
+				<string>/System/Library/Automator/Run AppleScript.action</string>
+				<key>ActionName</key>
+				<string>AppleScript を実行</string>
+				<key>ActionParameters</key>
+				<dict>
+					<key>source</key>
+					<string>(*	ConvertImages		File:		Base Script	Version:	1.0	Author:	Deadwood*)on run {input}		(* config *)	-- 作業用フォルダ名（ImageOptim Script にも設定が必要）	set defaultFolder to "ConvertImages"	-- 最大ピクセル数	set defaultMaxpxl to 400 as integer		-- ダイアログメッセージ	set dialogMsg to "ピクセルの最大値を指定して下さい。" &amp; return &amp; return &amp; ¬		"入力した数値(px)になるまで、画像の最も長い辺をアスペクト比を保ったまま縮小します。" &amp; return &amp; ¬		"それ以下は縮小しません。"		(* path *)	set desktopPath to path to desktop	set srcItems to input	set destFolder to desktopPath &amp; defaultFolder as string			(* 最大サイズの確認ダイアログ *)	try		-- ダイアログを表示し、ピクセル数の最大値を入力させる		tell application "System Events"			display dialog dialogMsg as text default answer defaultMaxpxl buttons {"Cancel", "OK"}			set maxpxl to text returned of result		end tell	on error errMsg number errno		errAlert(errMsg, errno)	end try		-- 入力値が数値であれば代入、ちがうならば初期値を代入する	try		set maxpxl to maxpxl as integer	on error		set maxpxl to defaultMaxpxl as integer	end try			(* 作業フォルダを作成する *)	try		tell application "Finder"			if exists destFolder then				-- 作業フォルダが存在する場合、内部のファイルを削除する				delete (every item of folder destFolder)			else				make new folder at desktopPath with properties {name:defaultFolder}			end if		end tell	on error errMsg number errno		errAlert(errMsg, errno)	end try			(* 作業ファイルを複製する *)	try		repeat with this_file in srcItems			if isDirectory(this_file) then				tell application "Finder"					set workList to (entire contents of (this_file) as alias list)				end tell				repeat with f in workList					if isImagefile(f) then						tell application "Finder"							duplicate f to destFolder without invisibles						end tell					end if				end repeat			else				if isImagefile(this_file) then					tell application "Finder"						duplicate this_file to destFolder without invisibles					end tell				end if			end if		end repeat	on error errMsg number errno		errAlert(errMsg, errno)	end try			(* 画像をリサイズする *)	try		-- 対象ファイルをリストアップする		set destItems to listItems(destFolder)		-- リサイズする		tell application "Image Events"			launch			repeat with this_file in destItems				-- 画像ファイル以外は開けないのでエラーとなり実行されない				try					set this_image to open this_file					copy dimensions of this_image to {W, H}					-- 両辺のどちらかが maxpxl より長い場合、リサイズする					if (W ≥ maxpxl or H ≥ maxpxl) then						scale this_image to size maxpxl						save this_image with icon					end if					close this_image				end try			end repeat		end tell	on error errMsg number errno		errAlert(errMsg, errno)	end try		-- 引数として対象ファイルの alias list を渡す	return destItems	end run-- 対象が画像ファイルであれば、true を返すon isImagefile(someItem)	set filePosixPath to quoted form of (POSIX path of (someItem as alias))	set fileType to (do shell script "file --mime-type -br " &amp; filePosixPath)	set validFileType to {"image/png", "image/jpeg", "image/gif"}	if fileType is in validFileType then return true	return falseend isImagefile-- 対象がフォルダであれば、true を返すon isDirectory(someItem)	set isFolder to (folder of (info for someItem))	set isPackageFolder to (package folder of (info for someItem))	if isFolder and not isPackageFolder then return true	return falseend isDirectory-- フォルダからファイルの alias list を取得するon listItems(targetFolder)	tell application "Finder"		set targetItems to items of folder (targetFolder) as alias list	end tell	return targetItemsend listItems-- エラーダイアログon errAlert(alertMsg, alertNo)	-- キャンセルされた場合は、そのままアプリを終了する	if alertNo is -128 then		tell me to quit		-- それ以外のエラーはダイアログを表示して終了する	else		set alertMsg to alertMsg as string		set alertNo to alertNo as string		tell application "System Events"			display alert alertMsg &amp; return &amp; "ERROR: " &amp; alertNo as warning		end tell	end if	tell me to quit	returnend errAlert</string>
+				</dict>
+				<key>BundleIdentifier</key>
+				<string>com.apple.Automator.RunScript</string>
+				<key>CFBundleVersion</key>
+				<string>1.0.2</string>
+				<key>CanShowSelectedItemsWhenRun</key>
+				<false/>
+				<key>CanShowWhenRun</key>
+				<true/>
+				<key>Category</key>
+				<array>
+					<string>AMCategoryUtilities</string>
+				</array>
+				<key>Class Name</key>
+				<string>RunScriptAction</string>
+				<key>InputUUID</key>
+				<string>762A2867-2981-44E6-B1A6-BF2735642DE3</string>
+				<key>Keywords</key>
+				<array>
+					<string>実行</string>
+				</array>
+				<key>OutputUUID</key>
+				<string>DD36FBAC-D68C-4F5A-9049-EAEE7540003E</string>
+				<key>UUID</key>
+				<string>325F8D9D-D2FB-45A3-97A2-F1E8D7994C60</string>
+				<key>UnlocalizedApplications</key>
+				<array>
+					<string>Automator</string>
+				</array>
+				<key>arguments</key>
+				<dict>
+					<key>0</key>
+					<dict>
+						<key>default value</key>
+						<string>on run {input, parameters}
+	
+	(* Your script goes here *)
+	
+	return input
+end run</string>
+						<key>name</key>
+						<string>source</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>0</string>
+					</dict>
+				</dict>
+				<key>isViewVisible</key>
+				<true/>
+				<key>location</key>
+				<string>309.500000:688.000000</string>
+				<key>nibPath</key>
+				<string>/System/Library/Automator/Run AppleScript.action/Contents/Resources/Japanese.lproj/main.nib</string>
+			</dict>
+			<key>isViewVisible</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>action</key>
+			<dict>
+				<key>AMAccepts</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Optional</key>
+					<false/>
+					<key>Types</key>
+					<array>
+						<string>com.apple.applescript.alias-object.image</string>
+					</array>
+				</dict>
+				<key>AMActionVersion</key>
+				<string>8</string>
+				<key>AMApplication</key>
+				<array/>
+				<key>AMParameterProperties</key>
+				<dict>
+					<key>filterIdentifier</key>
+					<dict/>
+					<key>filterParameters</key>
+					<dict/>
+				</dict>
+				<key>AMProvides</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Types</key>
+					<array>
+						<string>com.apple.applescript.alias-object.image</string>
+					</array>
+				</dict>
+				<key>AMRequiredResources</key>
+				<array/>
+				<key>ActionBundlePath</key>
+				<string>/System/Library/Automator/Apply Quartz Composition Filter to Image Files.action</string>
+				<key>ActionName</key>
+				<string>Quartz コンポジションフィルタをイメージファイルに適用</string>
+				<key>ActionParameters</key>
+				<dict>
+					<key>filterIdentifier</key>
+					<string>/sharpen</string>
+					<key>filterParameters</key>
+					<dict>
+						<key>amount</key>
+						<real>0.17499999999999999</real>
+					</dict>
+				</dict>
+				<key>BundleIdentifier</key>
+				<string>com.apple.QuartzComposer.automatorActions.imageFilter</string>
+				<key>CFBundleVersion</key>
+				<string>8</string>
+				<key>CanShowSelectedItemsWhenRun</key>
+				<false/>
+				<key>CanShowWhenRun</key>
+				<true/>
+				<key>Category</key>
+				<array>
+					<string>AMCategoryPhotos</string>
+				</array>
+				<key>Class Name</key>
+				<string>QuartzComposerImageFilter</string>
+				<key>InputUUID</key>
+				<string>FFFEBD01-6396-4EEB-B2AA-B5E63B6B9A30</string>
+				<key>Keywords</key>
+				<array>
+					<string>Quartz Composer</string>
+					<string>イメージ</string>
+				</array>
+				<key>OutputUUID</key>
+				<string>B2176D24-3A5D-4CE4-B943-008E4C9333F8</string>
+				<key>UUID</key>
+				<string>49BD4219-FDB2-4AD6-8199-8104BAEF8728</string>
+				<key>arguments</key>
+				<dict>
+					<key>0</key>
+					<dict>
+						<key>default value</key>
+						<string>/sepia</string>
+						<key>name</key>
+						<string>filterIdentifier</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>0</string>
+					</dict>
+				</dict>
+				<key>isViewVisible</key>
+				<false/>
+				<key>location</key>
+				<string>309.500000:375.000000</string>
+				<key>nibPath</key>
+				<string>/System/Library/Automator/Apply Quartz Composition Filter to Image Files.action/Contents/Resources/Japanese.lproj/main.nib</string>
+			</dict>
+			<key>isViewVisible</key>
+			<false/>
+		</dict>
+		<dict>
+			<key>action</key>
+			<dict>
+				<key>AMAccepts</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Optional</key>
+					<true/>
+					<key>Types</key>
+					<array>
+						<string>com.apple.applescript.object</string>
+					</array>
+				</dict>
+				<key>AMActionVersion</key>
+				<string>1.0.2</string>
+				<key>AMApplication</key>
+				<array>
+					<string>Automator</string>
+				</array>
+				<key>AMParameterProperties</key>
+				<dict>
+					<key>source</key>
+					<dict/>
+				</dict>
+				<key>AMProvides</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Types</key>
+					<array>
+						<string>com.apple.applescript.object</string>
+					</array>
+				</dict>
+				<key>ActionBundlePath</key>
+				<string>/System/Library/Automator/Run AppleScript.action</string>
+				<key>ActionName</key>
+				<string>AppleScript を実行</string>
+				<key>ActionParameters</key>
+				<dict>
+					<key>source</key>
+					<string>(*	ConvertImages		File:		ImageOptim Script	Version:	1.0	Author:	Deadwood*)on run		(* config *)	-- 作業用フォルダ名（Base Script にも設定が必要）	set defaultFolder to "ConvertImages"		(* 最適化アプリの設定	ImageOptim-CLI を利用したい場合は、下記のように書き換える *)	-- set myScript to "/Users/****/.nodebrew/current/bin/imageOptim -a -q -d "	set myScript to "open -a ImageOptim.app "		(* path *)	set desktopPath to path to desktop	set destFolder to desktopPath &amp; defaultFolder as string			(* 画像を最適化する *)	tell application "Finder"		try			set destPath to get POSIX path of (destFolder)			tell application "Terminal"				do shell script myScript &amp; quoted form of destPath			end tell		on error errMsg number errno			errAlert(errMsg, errno)		end try	end tell	end run-- エラーダイアログon errAlert(alertMsg, alertNo)	-- キャンセルされた場合は、そのままアプリを終了する	if alertNo is -128 then		tell me to quit		-- それ以外のエラーはダイアログを表示して終了する	else		set alertMsg to alertMsg as string		set alertNo to alertNo as string		tell application "System Events"			display alert alertMsg &amp; return &amp; "ERROR: " &amp; alertNo as warning		end tell	end if	tell me to quit	returnend errAlert</string>
+				</dict>
+				<key>BundleIdentifier</key>
+				<string>com.apple.Automator.RunScript</string>
+				<key>CFBundleVersion</key>
+				<string>1.0.2</string>
+				<key>CanShowSelectedItemsWhenRun</key>
+				<false/>
+				<key>CanShowWhenRun</key>
+				<true/>
+				<key>Category</key>
+				<array>
+					<string>AMCategoryUtilities</string>
+				</array>
+				<key>Class Name</key>
+				<string>RunScriptAction</string>
+				<key>IgnoresInput</key>
+				<true/>
+				<key>InputUUID</key>
+				<string>A41AE99E-E557-4743-99ED-613B89A2D5FC</string>
+				<key>Keywords</key>
+				<array>
+					<string>実行</string>
+				</array>
+				<key>OutputUUID</key>
+				<string>502C2957-1AE3-4D38-8675-AD5028639C0A</string>
+				<key>UUID</key>
+				<string>1E701838-D420-48AF-BFA8-151660CBC404</string>
+				<key>UnlocalizedApplications</key>
+				<array>
+					<string>Automator</string>
+				</array>
+				<key>arguments</key>
+				<dict>
+					<key>0</key>
+					<dict>
+						<key>default value</key>
+						<string>on run {input, parameters}
+	
+	(* Your script goes here *)
+	
+	return input
+end run</string>
+						<key>name</key>
+						<string>source</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>0</string>
+					</dict>
+				</dict>
+				<key>isViewVisible</key>
+				<true/>
+				<key>location</key>
+				<string>309.500000:333.000000</string>
+				<key>nibPath</key>
+				<string>/System/Library/Automator/Run AppleScript.action/Contents/Resources/Japanese.lproj/main.nib</string>
+			</dict>
+			<key>isViewVisible</key>
+			<true/>
+		</dict>
+	</array>
+	<key>connectors</key>
+	<dict>
+		<key>0C61A78C-D41B-4FF7-B105-40E6358CB101</key>
+		<dict>
+			<key>from</key>
+			<string>49BD4219-FDB2-4AD6-8199-8104BAEF8728 - 49BD4219-FDB2-4AD6-8199-8104BAEF8728</string>
+			<key>to</key>
+			<string>1E701838-D420-48AF-BFA8-151660CBC404 - 1E701838-D420-48AF-BFA8-151660CBC404</string>
+		</dict>
+		<key>CB6C346F-745C-4C7D-8ACD-AB8643AB8041</key>
+		<dict>
+			<key>from</key>
+			<string>325F8D9D-D2FB-45A3-97A2-F1E8D7994C60 - 325F8D9D-D2FB-45A3-97A2-F1E8D7994C60</string>
+			<key>to</key>
+			<string>49BD4219-FDB2-4AD6-8199-8104BAEF8728 - 49BD4219-FDB2-4AD6-8199-8104BAEF8728</string>
+		</dict>
+	</dict>
+	<key>workflowMetaData</key>
+	<dict>
+		<key>serviceApplicationBundleID</key>
+		<string>com.apple.finder</string>
+		<key>serviceApplicationPath</key>
+		<string>/System/Library/CoreServices/Finder.app</string>
+		<key>serviceInputTypeIdentifier</key>
+		<string>com.apple.Automator.fileSystemObject</string>
+		<key>serviceOutputTypeIdentifier</key>
+		<string>com.apple.Automator.nothing</string>
+		<key>serviceProcessesInput</key>
+		<integer>0</integer>
+		<key>workflowTypeIdentifier</key>
+		<string>com.apple.Automator.servicesMenu</string>
+	</dict>
+</dict>
+</plist>

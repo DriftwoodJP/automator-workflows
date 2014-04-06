@@ -1,4 +1,4 @@
-# ConvertImages.workflow
+# Convert Images.workflow
 
 * ImageOptim.app を利用して、画像ファイルを最適化します。
 * 指定されたピクセルサイズまでアスペクト比を保ったまま縮小します。
@@ -13,7 +13,7 @@
 ## 使い方
 
 * 画像ファイル、もしくはフォルダを選択します。
-* `ctrl+click`（2本指タップ、右クリック）で表示されるメニューから、`サービス` - `ConvertImages` を選択します。  
+* `ctrl+click`（2本指タップ、右クリック）で表示されるメニューから、`サービス` - `Convert Images` を選択します。  
 ![select](./img/ci2.png)
 * 最大の画像幅をピクセルで指定します。  
 ![setting](./img/ci3.png)
@@ -22,13 +22,11 @@
 
 
 
-## dev version
+## 設定
 
-AppleScript に全面的に書き換えました。
+AppleScript の修正により、下記に対応します。
 
-### 特徴
-
-#### アクションのカスタマイズ
+### アクションのカスタマイズ
 
 以下のシンプルな構成に変更しました。
 これにより画像処理用の Automator アクションの追加・変更がしやすくなりました。
@@ -42,7 +40,7 @@ ImageOptim Script (AppleScript)
 ```
 
 
-#### 初期値の設定項目を追加
+### 初期値の設定項目を追加
 
 以下の項目の設定変更を容易にしました。
 
@@ -50,7 +48,7 @@ ImageOptim Script (AppleScript)
 * 最大ピクセル数 - Base Script の defaultMaxpxl を修正。
 
 
-#### ImageOptim-CLI に対応
+### ImageOptim-CLI に対応
 
 [ImageOptim-CLI](http://jamiemason.github.io/ImageOptim-CLI/) をインストールしている場合は、そちらを利用できるよう設定を追加しました。
 

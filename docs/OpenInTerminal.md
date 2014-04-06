@@ -1,4 +1,4 @@
-# OpenInTerminal.app
+# Open in Terminal.app
 
 利用しやすいようアプリ形式で用意しました。  
 設定を確認して下さい。
@@ -16,7 +16,8 @@
 ![icon](./img/ot01.png)  
 ここでは Terminal.app のアイコンを利用しました。
 * アプリを Finder のツールバーに登録します。  
-![ToolBar](./img/ot02.png)
+![ToolBar](./img/ot02.png)  
+※ Mavericks から、操作が `cmd+drag` に変更となっています。
 * 登録が終わったら、アプリケーションフォルダーに移動して完了です。  
 ![ToolBar](./img/ot04.png)
 
@@ -27,7 +28,7 @@
 ![click](./img/ot03.png)
 
 
-## OpenInTerminal.workflow
+## Open in Terminal.workflow
 
 .workflow 形式のファイルも用意しました。  
 選択したファイル・フォルダーの上位ディレクトリが開きます。
